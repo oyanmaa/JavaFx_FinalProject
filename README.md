@@ -2,6 +2,8 @@
 ### プロジェクト名：FinalProject
 ## 概要
 steam版のVtubeStadioをJavaFX側で操作、管理できるようにする
+## 開発環境
+
 ## 手順
 1. steam版のVtubeStadioのapiを利用する
 2. JavaFX側のGUIでVtubeStadioを操作する
