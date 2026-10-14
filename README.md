@@ -13,5 +13,5 @@ steam版のVtubeStadioをJavaFX側で操作、管理できるようにする
 - モデルの小物(アクセサリーの着脱ができる)
 ## 検証
 VtubeStadioとJavaFXの両方を立ち上げて確認する
-##外部リンク
+## 外部リンク
 [Vtube Stadioとは](https://denchisoft.com/)
