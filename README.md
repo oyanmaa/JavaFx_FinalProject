@@ -1,4 +1,4 @@
-# JavaFX 
+# JavaFX アプリ開発
 ### プロジェクト名：FinalProject
 ## 概要
 steam版のVtubeStadioをJavaFX側で操作、管理できるようにする
