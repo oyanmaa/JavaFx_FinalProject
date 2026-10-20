@@ -22,6 +22,9 @@ steam版のVtube StadioをJavaFX側で操作、管理できるようにする
 ## 検証
 Vtube StadioとJavaFXの両方を立ち上げて確認する
 ## ファイル構成
+## ディレクトリ構成 (Directory Structure)
+
+```text
 .
 ├── src/
 │   └── main/
