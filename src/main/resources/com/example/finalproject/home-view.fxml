@@ -2,34 +2,73 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import org.controlsfx.control.HiddenSidesPane?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="561.0" prefWidth="655.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="561.0" prefWidth="542.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.finalproject.MainLayoutController">
    <children>
-      <ImageView fitHeight="512.0" fitWidth="355.0" layoutX="256.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true" />
-      <VBox alignment="CENTER" layoutX="36.0" layoutY="137.0" prefHeight="398.0" prefWidth="100.0" spacing="30.0">
-         <children>
-            <Label text="■衣装" />
-            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="75.0" text="角" />
-            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="75.0" text="右袖" />
-            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="75.0" text="左袖" />
-            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="75.0" text="チョーカー" />
-            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="75.0" text="タイツ" />
-            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="75.0" text="靴" />
-         </children>
-      </VBox>
-      <Button layoutX="48.0" layoutY="25.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="75.0" text="←" />
-      <VBox alignment="CENTER" layoutX="156.0" layoutY="137.0" prefHeight="398.0" prefWidth="100.0" spacing="30.0">
-         <children>
-            <Label text="■表情差分" />
-            <Button mnemonicParsing="false" text="通常" />
-            <Button mnemonicParsing="false" text="悲しい" />
-            <Button mnemonicParsing="false" text="照れる" />
-            <Button mnemonicParsing="false" text="驚き" />
-         </children>
-      </VBox>
+      <ImageView fitHeight="512.0" fitWidth="312.0" layoutX="230.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true" />
+
+      <!-- HiddenSidesPane の修正部分 -->
+      <HiddenSidesPane layoutX="-1.0" pinnedSide="LEFT" prefHeight="561.0" prefWidth="220.0" style="-fx-background-color: #ffffff;">
+         <!-- 左側に隠す（またはピン留めする）パネル -->
+         <left>
+            <AnchorPane prefHeight="561.0" prefWidth="218.0" style="-fx-background-color: #F6E8E5;">
+               <children>
+                  <Label fx:id="nameLabel" layoutX="55.0" layoutY="524.0" prefHeight="30.0" prefWidth="104.0" text="UserName" textFill="#8f566c">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Button contentDisplay="CENTER" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#onBackClick" prefHeight="35.0" prefWidth="50.0" style="-fx-background-color: #F6E8E5; -fx-border-color: #8f566c; -fx-border-radius: 5px; -fx-border-width: 2px;" text="←" textAlignment="CENTER" textFill="#8f566c">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                  </Button>
+                  <Separator layoutX="7.0" layoutY="513.0" prefWidth="200.0" style="-fx-background-color: #8f566c;" />
+                  <Label layoutX="56.0" layoutY="68.0" prefHeight="33.0" prefWidth="143.0" style="-fx-background-color: #F6E8E5;" text="VtubeStudio" textFill="#8f566c">
+                     <font>
+                        <Font name="Consolas Bold" size="23.0" />
+                     </font>
+                  </Label>
+                  <VBox alignment="CENTER" layoutX="14.0" layoutY="160.0" prefHeight="188.0" prefWidth="192.0" spacing="10.0">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#onClotherClick" prefHeight="34.0" prefWidth="109.0" style="-fx-background-color: #F6E8E5;" text="Clothers" textFill="#8f566c">
+                           <font>
+                              <Font name="Consolas Bold" size="19.0" />
+                           </font>
+                        </Button>
+                        <Separator prefWidth="200.0" style="-fx-background-color: #8f566c;" />
+                        <Button mnemonicParsing="false" onAction="#onEmotionClick" prefHeight="34.0" prefWidth="109.0" style="-fx-background-color: #F6E8E5;" text="Emotions" textFill="#8f566c">
+                           <font>
+                              <Font name="Consolas Bold" size="19.0" />
+                           </font>
+                        </Button>
+                        <Separator prefWidth="200.0" style="-fx-background-color: #8f566c;" />
+                        <Button mnemonicParsing="false" onAction="#onAccessoriesClick" prefHeight="34.0" prefWidth="154.0" style="-fx-background-color: #F6E8E5;" text="Accessories" textFill="#8f566c">
+                           <font>
+                              <Font name="Consolas Bold" size="19.0" />
+                           </font>
+                        </Button>
+                        <Separator prefWidth="200.0" style="-fx-background-color: #8f566c;" />
+                     </children>
+                  </VBox>
+                  <ImageView fitHeight="40.0" fitWidth="33.0" layoutX="23.0" layoutY="68.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@img/icon.png" />
+                     </image>
+                  </ImageView>
+                  <Separator layoutX="23.0" layoutY="100.0" prefHeight="3.0" prefWidth="175.0" style="-fx-background-color: #8f566c;" />
+               </children>
+            </AnchorPane>
+         </left>
+
+         <!-- メインコンテンツ（中央の表示エリア）が必要な場合はここに <content> ... </content> を追加します -->
+      </HiddenSidesPane>
    </children>
 </AnchorPane>

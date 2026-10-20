@@ -2,34 +2,92 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import org.controlsfx.control.HiddenSidesPane?>
+<?import org.controlsfx.control.ToggleSwitch?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="561.0" prefWidth="655.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="561.0" prefWidth="542.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <ImageView fitHeight="512.0" fitWidth="355.0" layoutX="256.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true" />
-      <VBox alignment="CENTER" layoutX="36.0" layoutY="137.0" prefHeight="398.0" prefWidth="100.0" spacing="30.0">
-         <children>
-            <Label text="■衣装" />
-            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="75.0" text="角" />
-            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="75.0" text="右袖" />
-            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="75.0" text="左袖" />
-            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="75.0" text="チョーカー" />
-            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="75.0" text="タイツ" />
-            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="75.0" text="靴" />
-         </children>
-      </VBox>
-      <Button layoutX="48.0" layoutY="25.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="75.0" text="←" />
-      <VBox alignment="CENTER" layoutX="156.0" layoutY="137.0" prefHeight="398.0" prefWidth="100.0" spacing="30.0">
-         <children>
-            <Label text="■表情差分" />
-            <Button mnemonicParsing="false" text="通常" />
-            <Button mnemonicParsing="false" text="悲しい" />
-            <Button mnemonicParsing="false" text="照れる" />
-            <Button mnemonicParsing="false" text="驚き" />
-         </children>
-      </VBox>
+      <ImageView fitHeight="512.0" fitWidth="312.0" layoutX="224.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true" />
+      <HiddenSidesPane fx:id="backClick" layoutX="-1.0" pinnedSide="LEFT" prefHeight="561.0" prefWidth="220.0" style="-fx-background-color: #ffffff;">
+         <left>
+            <AnchorPane prefHeight="561.0" prefWidth="227.0" style="-fx-background-color: #F6E8E5;">
+               <children>
+                  <Label fx:id="userName" layoutX="55.0" layoutY="524.0" prefHeight="30.0" prefWidth="104.0" text="UserName" textFill="#8f566c">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Button contentDisplay="CENTER" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#backClick" prefHeight="35.0" prefWidth="50.0" style="-fx-background-color: #F6E8E5; -fx-border-color: #8f566c; -fx-border-radius: 5px; -fx-border-width: 2px;" text="←" textAlignment="CENTER" textFill="#8f566c">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                  </Button>
+                  <Separator layoutX="7.0" layoutY="513.0" prefWidth="200.0" style="-fx-background-color: #8f566c;" />
+                  <Label layoutX="56.0" layoutY="68.0" prefHeight="33.0" prefWidth="143.0" style="-fx-background-color: #F6E8E5;" text="VtubeStudio" textFill="#8f566c">
+                     <font>
+                        <Font name="Consolas Bold" size="23.0" />
+                     </font>
+                  </Label>
+                  <VBox alignment="CENTER" layoutX="18.0" layoutY="101.0" prefHeight="370.0" prefWidth="192.0" spacing="20.0">
+                     <children>
+                        <Separator prefWidth="200.0" style="-fx-background-color: #8f566c;" />
+                        <Label text="Clothers" textFill="#8f566c">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <Separator prefWidth="200.0" style="-fx-background-color: #8f566c;" />
+                        <HBox prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <VBox alignment="CENTER_LEFT" prefHeight="136.0" prefWidth="129.0" spacing="20.0">
+                                 <children>
+                                    <Label text="●　袖（右）" textFill="#8f566c">
+                                       <font>
+                                          <Font name="Consolas Bold" size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="●　袖（左）" textFill="#8f566c">
+                                       <font>
+                                          <Font name="Consolas Bold" size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="●　？？？" textFill="#8f566c">
+                                       <font>
+                                          <Font name="Consolas Bold" size="15.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                              <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="20.0">
+                                 <children>
+                                    <ToggleSwitch fx:id="rightArm" selected="true" />
+                                    <ToggleSwitch fx:id="leftArm" selected="true" />
+                                    <ToggleSwitch selected="true" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="21.0" prefWidth="250.0" spacing="100.0" />
+                        <HBox alignment="CENTER" prefHeight="19.0" prefWidth="192.0" spacing="100.0" />
+                        <HBox prefHeight="19.0" prefWidth="192.0" spacing="10.0" />
+                        <HBox prefHeight="19.0" prefWidth="192.0" spacing="10.0" />
+                     </children>
+                  </VBox>
+                  <ImageView fitHeight="40.0" fitWidth="33.0" layoutX="23.0" layoutY="68.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@img/icon.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </left>
+      </HiddenSidesPane>
    </children>
 </AnchorPane>

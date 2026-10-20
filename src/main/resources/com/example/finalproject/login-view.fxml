@@ -2,38 +2,66 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+<?import org.controlsfx.control.textfield.CustomPasswordField?>
+<?import org.controlsfx.control.textfield.CustomTextField?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="561.0" prefWidth="655.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="485.0" prefWidth="479.0" style="-fx-background-color: #F6E8E5;" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.finalproject.LoginController">
    <children>
-      <ImageView fitHeight="512.0" fitWidth="355.0" layoutX="256.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+      <AnchorPane layoutX="79.0" layoutY="150.0" prefHeight="277.0" prefWidth="321.0" style="-fx-background-color: #f5efed;">
+         <effect>
+            <DropShadow offsetX="0" offsetY="0" radius="10.0">
+               <color>
+                  <Color fx:value="#d494a1" />
+               </color>
+            </DropShadow>
+         </effect>
+         <children>
+            <VBox alignment="CENTER" layoutX="25.0" layoutY="27.0" prefHeight="223.0" prefWidth="271.0" spacing="10.0">
+               <children>
+                  <HBox prefHeight="15.0" prefWidth="271.0">
+                     <children>
+                        <Label text="ユーザー名" textFill="#8f566c">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font></Label>
+                     </children>
+                  </HBox>
+                  <CustomTextField fx:id="nameInput" prefHeight="30.0" prefWidth="271.0" style="-fx-background-color: #f5efed; -fx-border-color: #8f566c; -fx-border-radius: 5px;" />
+                  <HBox prefHeight="17.0" prefWidth="271.0">
+                     <children>
+                        <Label text="パスワード" textFill="#8f566c">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font></Label>
+                     </children>
+                  </HBox>
+                  <CustomPasswordField fx:id="passInput" prefHeight="30.0" prefWidth="271.0" style="-fx-background-color: #f5efed; -fx-border-radius: 5px; -fx-border-color: #8f566c;" />
+                  <Button mnemonicParsing="false" onAction="#onLoginClick" prefHeight="31.0" prefWidth="217.0" style="-fx-background-color: #f5efed; -fx-border-color: #8f566c; -fx-border-radius: 5;" text="Login →" textFill="#8f566c">
+                     <font>
+                        <Font name="Consolas Bold" size="15.0" />
+                     </font>
+                  </Button>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+      <ImageView fitHeight="48.0" fitWidth="54.0" layoutX="53.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@img/icon.png" />
          </image>
       </ImageView>
-      <VBox alignment="CENTER" layoutX="36.0" layoutY="137.0" prefHeight="398.0" prefWidth="100.0" spacing="30.0">
-         <children>
-            <Label text="■衣装" />
-            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="75.0" text="角" />
-            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="75.0" text="右袖" />
-            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="75.0" text="左袖" />
-            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="75.0" text="チョーカー" />
-            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="75.0" text="タイツ" />
-            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="75.0" text="靴" />
-         </children>
-      </VBox>
-      <Button layoutX="48.0" layoutY="25.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="75.0" text="←" />
-      <VBox alignment="CENTER" layoutX="156.0" layoutY="137.0" prefHeight="398.0" prefWidth="100.0" spacing="30.0">
-         <children>
-            <Label text="■表情差分" />
-            <Button mnemonicParsing="false" text="通常" />
-            <Button mnemonicParsing="false" text="悲しい" />
-            <Button mnemonicParsing="false" text="照れる" />
-            <Button mnemonicParsing="false" text="驚き" />
-         </children>
-      </VBox>
+      <Label layoutX="137.0" layoutY="31.0" text="VtubeStadio Login" textFill="#8f566c">
+         <font>
+            <Font name="Consolas Bold" size="30.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
