@@ -22,22 +22,34 @@ steam版のVtube StadioをJavaFX側で操作、管理できるようにする
 ## 検証
 Vtube StadioとJavaFXの両方を立ち上げて確認する
 ## ファイル構成
-src/main/
-├── resources/com/example/vtsapp/ (FXMLファイル)
-│   ├── login-view.fxml          <-- [画面1] 接続・ログイン画面
-│   ├── home-view.fxml           <-- [画面2] メインのホーム画面（ベース枠）
-│   ├── emotion.fxml             <-- [子画面] 表情操作パネル
-│   ├── clothes.fxml             <-- [子画面] 衣装操作パネル
-│   └── accessories.fxml         <-- [子画面] アクセサリー操作パネル
+.
+├── src/
+│   └── main/
+│       ├── java/
+│       │   └── com/example/vtsapp/
+│       │       ├── HelloApplication.java      # アプリケーション起動エントリポイント (Main)
+│       │       ├── VTSClient.java             # VTube StudioとのWebSocket通信・認証管理 (共通)
+│       │       │
+│       │       ├── LoginController.java        # 接続・ログイン画面の制御 Controller
+│       │       ├── HomeController.java         # メインホーム画面（全体フレーム・ナビゲーション）Controller
+│       │       │
+│       │       ├── EmotionController.java      # [カテゴリ] 表情切り替え操作用 Controller
+│       │       ├── ClothesController.java      # [カテゴリ] 衣装切り替え操作用 Controller
+│       │       └── AccessoriesController.java  # [カテゴリ] アクセサリー・小物着脱操作用 Controller
+│       │
+│       └── resources/
+│           └── com/example/vtsapp/
+│               ├── login-view.fxml             # 接続・ポート指定・ログイン画面レイアウト
+│               ├── home-view.fxml              # メインホーム画面（全体フレーム・ヘッダー/フッター）レイアウト
+│               │
+│               ├── emotion.fxml                # 表情操作パネル用レイアウト
+│               ├── clothes.fxml                # 衣装操作パネル用レイアウト
+│               ├── accessories.fxml            # アクセサリー・小物操作パネル用レイアウト
+│               │
+│               └── img/                        # アプリ内で使用する静的画像リソース
+│                   └── icon.png
 │
-└── java/com/example/vtsapp/      (Javaファイル)
-    ├── HelloApplication.java    <-- アプリ起動
-    ├── VTSClient.java           <-- VTSとのWebSocket通信クラス（接続を維持）
-    │
-    ├── LoginController.java     <-- login-view.fxml の制御（接続成功でhomeへ遷移）
-    ├── HomeController.java      <-- home-view.fxml の制御（ナビゲーションや共通枠）
-    ├── EmotionController.java   <-- emotion.fxml の制御（表情ボタン処理）
-    ├── ClothesController.java   <-- clothes.fxml の制御（衣装ボタン処理）
-    └── AccessoriesController.java <-- accessories.fxml の制御（小物ボタン処理）
+├── pom.xml                                     # Maven依存関係設定 (JavaFX, Gson, WebSocket等)
+└── README.md                                   # プロジェクトドキュメント
 ## 外部リンク
 [Vtube Stadioとは](https://denchisoft.com/)
