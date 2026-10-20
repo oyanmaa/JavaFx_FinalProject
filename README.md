@@ -21,5 +21,23 @@ steam版のVtube StadioをJavaFX側で操作、管理できるようにする
 - モデルの小物(アクセサリーの着脱ができる)
 ## 検証
 Vtube StadioとJavaFXの両方を立ち上げて確認する
+## ファイル構成
+src/main/
+├── resources/com/example/vtsapp/ (FXMLファイル)
+│   ├── login-view.fxml          <-- [画面1] 接続・ログイン画面
+│   ├── home-view.fxml           <-- [画面2] メインのホーム画面（ベース枠）
+│   ├── emotion.fxml             <-- [子画面] 表情操作パネル
+│   ├── clothes.fxml             <-- [子画面] 衣装操作パネル
+│   └── accessories.fxml         <-- [子画面] アクセサリー操作パネル
+│
+└── java/com/example/vtsapp/      (Javaファイル)
+    ├── HelloApplication.java    <-- アプリ起動
+    ├── VTSClient.java           <-- VTSとのWebSocket通信クラス（接続を維持）
+    │
+    ├── LoginController.java     <-- login-view.fxml の制御（接続成功でhomeへ遷移）
+    ├── HomeController.java      <-- home-view.fxml の制御（ナビゲーションや共通枠）
+    ├── EmotionController.java   <-- emotion.fxml の制御（表情ボタン処理）
+    ├── ClothesController.java   <-- clothes.fxml の制御（衣装ボタン処理）
+    └── AccessoriesController.java <-- accessories.fxml の制御（小物ボタン処理）
 ## 外部リンク
 [Vtube Stadioとは](https://denchisoft.com/)
