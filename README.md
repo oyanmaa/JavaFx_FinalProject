@@ -21,7 +21,8 @@ steam版のVtube StadioをJavaFX側で操作、管理できるようにする
 - モデルの小物(アクセサリーの着脱ができる)
 ## 検証
 Vtube StadioとJavaFXの両方を立ち上げて確認する
-## ファイル構成
+## 外部リンク
+[Vtube Stadioとは](https://denchisoft.com/)
 ## ディレクトリ構成 (Directory Structure)
 
 ```text
@@ -54,5 +55,3 @@ Vtube StadioとJavaFXの両方を立ち上げて確認する
 │
 ├── pom.xml                                     # Maven依存関係設定 (JavaFX, Gson, WebSocket等)
 └── README.md                                   # プロジェクトドキュメント
-## 外部リンク
-[Vtube Stadioとは](https://denchisoft.com/)
